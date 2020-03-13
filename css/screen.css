@@ -67,13 +67,12 @@ img {
     Default markup for typographic elements
 */
 
-/* h1 {
-    font-family: "Times New Roman", serif;
+h1 {
     font-size: 36px;
-    font-weight: normal;
     line-height: 40px;
     margin: 0 0 24px;
-} */
+    font-family: "Playfair Display", serif;
+}
 /* h2 {
     font-size: 23px;
     line-height: 32px;
