@@ -29,11 +29,12 @@ html {
     /* font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif; */
     font-family: "droid-serif", Georgia, serif;
     color: #5C6366;
-    padding: 48px 24px 24px;
+    /* padding: 48px 24px 24px; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -83,23 +84,13 @@ h1 {
     font-family: "Playfair Display", serif;
 }
 *+h2 {
-    margin-top: 48px;
-    
+    margin-top: 48px;   
 }
-/* h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin: 0 0 24px;
-} */
 h2,
 h3 {
     font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
     color: #17181A;
 }
-
-
-
-
 h4,
 h5,
 h6 {
@@ -132,7 +123,8 @@ blockquote {
     font-style: italic;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: 48px 0;
+    padding: 24px 24px;
     font-family: "Times New Roman", serif;
 }
 
@@ -144,7 +136,7 @@ blockquote * {
 figcaption {
     font-size: 12px;
     line-height: 16px;
-    padding-top: 8px;
+    padding: 0;
     color: Grey;
 }
 
@@ -172,19 +164,27 @@ a:focus {
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    h1 {
+        font-size: 36px;
+        
+        line-height: 40px;
+        
+    }
+
+}
 
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    html {
-        padding: 48px 48px 24px;
-    }
     h1 {
-        font-size: 58px;
-        line-height: 64px;
+        font-size: 46px;
+        
+        line-height: 56px;
+        
     }
 }
+
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 
@@ -192,7 +192,15 @@ a:focus {
 
 /* Extra large devices (large desktops, 1200px and up) */
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 58px;
+        
+        line-height: 72px;
+
+        
+    }
+}
 
 /*
     Print styles.
@@ -270,22 +278,27 @@ components: Author
 .c-author__image {
     width: 56px;
     height: 56px;
-    border-radius: 100px;
+    border-radius: 100%;
     margin-right: 16px;
+
+    
 }
 .c-author__name,
 .c-author__meta {
     margin-bottom: 0;
+    
 }
 .c-author__meta {
     font-size: 14px;
     font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
     line-height: 24px;
+    margin-top: 4px;
+    padding: 0;
 
 }
 .c-author__name {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 @media (min-width: 992px) {
@@ -304,13 +317,24 @@ components: Article
 .c-article__header,
 .c-article__body {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
+
 .c-article__header {
-    padding: 24px 24px 0;
+    padding: 24px 24px 0 ;
+    max-width: 100%;
+    vertical-align: top;
 }
+
 .c-article__body{
     padding: 0 24px;
+}
+
+.c-article__date {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 0;
+    font-style: normal;
 }
 @media (min-width: 786px) {
     .c-article__header {
@@ -338,10 +362,20 @@ components: Article
 }
 
 /*
+components: c-quote
+*/
+.c-quote {
+    background: #F2FAF8;
+    color: #00B37D;
+}
+
+
+/*
     utilities: max-width
     ---
     utility classes to put specific max widths  onto elements
 */
-.u-max-width-sm: {
-    min-width: 36em;
+.u-max-width-sm{
+    max-width: 36em;
 }
+
