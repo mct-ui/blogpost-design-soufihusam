@@ -42,9 +42,10 @@ html {
 }
 
 body {
-    max-width: 42em;
+    /* AANGEPAST max-width: 42em;*/
     margin: 0 auto;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -59,6 +60,7 @@ body {
     text-shadow: none;
 }
 
+
 /*
     Elements: Images
     ---
@@ -69,6 +71,7 @@ img {
     max-width: 100%;
     vertical-align: top;
 }
+
 
 /*
     Elements: typography
@@ -83,14 +86,17 @@ h1 {
     margin: 0 0 24px;
     font-family: "Playfair Display", serif;
 }
+
 *+h2 {
-    margin-top: 48px;   
+    margin-top: 48px;
 }
+
 h2,
 h3 {
     font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
     color: #17181A;
 }
+
 h4,
 h5,
 h6 {
@@ -162,45 +168,193 @@ a:focus {
     color: #1abaff;
 }
 
+
 /* Small devices (landscape phones, 576px and up) */
 
 @media (min-width: 576px) {
     h1 {
         font-size: 36px;
-        
         line-height: 40px;
-        
     }
-
 }
+
 
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
     h1 {
         font-size: 46px;
-        
         line-height: 56px;
-        
     }
 }
 
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    /*AANGEPAST WAS NIET INGEVULD*/
+    h1 {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
     h1 {
         font-size: 58px;
-        
         line-height: 72px;
-
-        
     }
 }
+
+
+/*
+components: Author
+*/
+
+.c-author {
+    display: flex;
+    align-items: center;
+}
+
+.c-author__image {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    margin-right: 16px;
+}
+
+.c-author__name,
+.c-author__meta {
+    margin-bottom: 0;
+}
+
+.c-author__meta {
+    font-size: 14px;
+    font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
+    line-height: 24px;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.c-author__name {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+@media (min-width: 992px) {
+    .c-author {
+        display: block;
+    }
+    .c-author__image {
+        margin-bottom: 16px;
+    }
+}
+
+
+/*
+components: Article
+*/
+
+
+/*
+.c-article__header,
+.c-article__body {
+    max-width: 1200px;
+    margin: 0 auto;
+    AANGEPAST: je hebt ze zelf gelijk gezet... 
+}
+*/
+
+.c-article__header {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    /* display: flow-root;*/
+}
+
+.c-article__body {
+    max-width: calc(36em + 96px);
+    margin: 0 auto;
+}
+
+.c-article__header {
+    padding: 24px 24px 0;
+    /* max-width: 100%;
+    vertical-align: top;*/
+}
+
+.c-article__body {
+    padding: 0 24px;
+}
+
+.c-article__date {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 0;
+    font-style: normal;
+}
+
+@media (min-width: 786px) {
+    .c-article__header {
+        padding: 48px 48px 24px;
+    }
+    .c-article__author {
+        padding-bottom: 24px;
+    }
+    .c-article__body {
+        padding: 24px 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-article__body {
+        max-width: 1200px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .c-article__author {
+        width: 25%;
+        padding-right: 24px;
+    }
+    .c-article__content {
+        width: 75%;
+    }
+}
+
+
+/*
+components: c-quote
+*/
+
+.c-quote {
+    /*AANGEPAST*/
+    margin: 48px -24px;
+    padding: 24px;
+    background: #F2FAF8;
+    color: #00B37D;
+}
+
+
+/*
+    utilities: max-width
+    ---
+    utility classes to put specific max widths  onto elements
+*/
+
+.u-max-width-sm {
+    max-width: 36em;
+}
+
+
+/*volgorde: eerst elements dan components en dan utilities maar print styles sowieso op t einde*/
+
 
 /*
     Print styles.
@@ -268,114 +422,3 @@ a:focus {
         page-break-after: avoid;
     }
 }
-/*
-components: Author
-*/
-.c-author {
-    display: flex;
-    align-items: center;
-}
-.c-author__image {
-    width: 56px;
-    height: 56px;
-    border-radius: 100%;
-    margin-right: 16px;
-
-    
-}
-.c-author__name,
-.c-author__meta {
-    margin-bottom: 0;
-    
-}
-.c-author__meta {
-    font-size: 14px;
-    font-family: "Inter Web", "Helvetica Neue", Helvetica, arial, sans-serif;
-    line-height: 24px;
-    margin-top: 4px;
-    padding: 0;
-
-}
-.c-author__name {
-    font-size: 12px;
-    line-height: 16px;
-}
-
-@media (min-width: 992px) {
-    .c-author {
-        display: block;
-        
-    }
-    .c-author__image {
-        margin-bottom: 16px;
-    }
-}
-
-/*
-components: Article
-*/
-.c-article__header,
-.c-article__body {
-    max-width: 1200px;
-    margin: 0 auto; 
-}
-
-.c-article__header {
-    padding: 24px 24px 0 ;
-    max-width: 100%;
-    vertical-align: top;
-}
-
-.c-article__body{
-    padding: 0 24px;
-}
-
-.c-article__date {
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 0;
-    font-style: normal;
-}
-@media (min-width: 786px) {
-    .c-article__header {
-        padding: 48px 48px 24px;
-    }
-    .c-article__author {
-        padding-bottom: 24px;
-    }
-    .c-article__body {
-        padding: 24px 48px;
-    }
-}
-@media (min-width: 992px) {
-    .c-article__body {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .c-article__author {
-        width: 25%;
-        padding-right: 24px;
-    }
-    .c-article__content {
-        width: 75%;
-    } 
-}
-
-/*
-components: c-quote
-*/
-.c-quote {
-    background: #F2FAF8;
-    color: #00B37D;
-}
-
-
-/*
-    utilities: max-width
-    ---
-    utility classes to put specific max widths  onto elements
-*/
-.u-max-width-sm{
-    max-width: 36em;
-}
-
